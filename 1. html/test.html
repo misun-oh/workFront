@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        요소를 선택하는 3가지 방법
+        태그이름
+        #아이디
+        .클래스
+        */
+
+        ul{
+            /*정해지지 않은 스타일을 지정할 경우 기본 123*/
+            list-style: nonoasdasd;
+        }
+        li{
+            line-height: 50px;
+        }
+        label{
+            /*inline*/
+            width: 60px;
+            display: inline-block;
+            /*float: left;*/
+        }
+        fieldset{
+            padding: 0px;
+        }
+        h1{
+            margin: 0px;
+        }
+        
+    </style>
+</head>
+<body>
+    <fieldset>
+    <h1>예약정보</h1>
+    <form action="">
+    <ul>
+        <li>
+            <label for="r-name">이름</label>
+            <input type="text" name="" id="r-name">
+        </li>
+        <li>
+            <label for="phone">전화</label>
+            <input type="text" name="" id="phone">
+        </li>
+        <li>
+            <label for="email">이메일</label>
+            <input type="text" name="" id="email">
+        </li>
+        <li>
+            <button type="submit">예약하기</button>
+        </li>
+    </ul>
+    </form>
+    </fieldset>
+</body>
+</html>

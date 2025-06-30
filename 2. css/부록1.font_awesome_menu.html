@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');
+
+        ul{
+            list-style: none;
+        }
+        li{
+            display: inline-block;
+            border: 1px solid black;
+            padding: 20px;
+            /* 글꼴 
+            font-family : 글꼴이름 
+            */
+            font-family: "East Sea Dokdo", sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            
+        }
+        /* class속성에 east-sea-dokdo-regular을 부여 */
+        .east-sea-dokdo-regular {
+            font-family: "East Sea Dokdo", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+
+    <!--외부링크를 사용하는경우 head영역에 작성 해주도록 하자-->
+    <script src="https://kit.fontawesome.com/08035877d1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <div class="east-sea-dokdo-regular">
+        모든 인류 구성원의 전부의 존엄성과....
+    </div>
+    <ul>
+        <li><i class="fa-solid fa-house"></i> 메뉴1</li>
+        <li><i class="fa-regular fa-comment"></i> 메뉴2</li>
+        <li><i class="fa-brands fa-github"></i> 메뉴3</li>
+    </ul>
+</body>
+</html>

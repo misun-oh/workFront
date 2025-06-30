@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            /* font-family: 궁서체; */
+        }
+        h1{
+            /* 글자체가 없으면 다음 글자체를 사용*/
+            font-family: 맑은 고딕;
+        }
+
+        /* 절대크기 */
+        .px24{
+            font-size: 24px;
+        }
+        .rem2{
+            font-size: 2rem;
+        }
+        .em2{
+            font-size: 0.3em;
+        }
+        .p150{
+            font-size: 150%;
+        }
+
+        .fw100{
+            font-weight: 100;
+        }
+        .fw500{
+            font-weight: 500;
+        }
+        .fw900{
+            font-weight: 900;
+        }
+        .i{
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>텍스트 스타일</h1>
+    <h2>font-family 속성</h2>
+    <p>글꼴을 지정 할때 사용</p>
+    <p>
+        <!-- 
+        a태그 : 하이퍼 링크
+         target="_blank" : 새창으로
+                 기본값은 self : 현재창에서 연결
+         -->
+        <a href="https://fonts.google.com/" target="_blank">웹 폰트(구글폰트)</a>
+    </p>
+
+    <h2>font-size</h2>
+    <p>텍스트의 크기를 변경 할 때 사용</p>
+    <ul>
+        <li class="px24">px</li>
+        <li class="p150">%</li>
+        <li class="em2">em</li>
+        <li class="rem2">rem
+            <span class="em2">em테스트</span>
+        </li>
+    </ul>
+
+    <h2>font-weight</h2>
+    <p>글자의 두께를 변경할 때 사용</p>
+    <ul>
+        <li class="fw100">일반</li>
+        <li class="fw500">굵게</li>
+        <li class="fw900">더 굵게</li>
+    </ul>
+
+    <h2>font-style</h2>
+    <p>기울임꼴</p>
+    <ul>
+        <li class="i">기울임</li>
+    </ul>
+</body>
+</html>

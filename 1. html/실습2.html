@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--내부 스타일 시트-->
+    <style>
+        /* CSS 선택자를 이용해서 스타일을 지정 
+        1. 태그이름 
+            화면에 있는 모든 태그에 적용 - 스타일의 적용범위가 넓다!
+        2. 아이디 속성 #
+            아이디 = 식별자 - 스타일의 적용범위가 좁다
+        3. 클래스 속성 .
+        */
+        
+    </style>
+
+    <!--외부 스타일 시트 - 공통 스타일
+    여러 웹 문서에서 사용할 스타일을 별도 타일로 저장해 놓고 
+    필요할 때마다 연결 하여 사용
+    -->
+    <link rel="stylesheet" href="실습2.css">
+</head>
+<body>
+
+    <!--인라인 스타일 방식
+
+    -->
+    <div id="container" style="background-color: beige;">
+        <h1>프런트엔드 개발자 지원서</h1>
+        <p>
+            HTML, CSS, 자바스크립트의 기술을 이해하고 실무 경험이 있는 분을 찾습니다.
+        </p>
+        <hr>
+        <h3>개인정보</h3>
+        <ul id="aa">
+            <li>이름<input type="text" name="" id="" placeholder="공백 없이 입력하세요."></li>
+            <li>연락처<input type="text" name="" id=""></li>
+        </ul>
+        <h3>지원 분야</h3>
+        <ul>
+            <li><input type="radio" name="field" id="" value="an">웹 퍼블리싱</li>
+            <li><input type="radio" name="field" id="" value="pd">웹 애플리케이션 개발</li>
+            <li><input type="radio" name="field" id="" value="eng">개발 환경 개선</li>
+        </ul>
+        <h3>지원 동기</h3>
+        <textarea name="" id="" cols="70" rows="5" placeholder="본사 지원 동기를 간략히 써 주세요."></textarea>
+        <br>
+        <button type="submit">접수하기</button>
+        <button type="reset">다시쓰기</button>
+        
+
+    </div>
+</body>
+</html>

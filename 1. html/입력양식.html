@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--  
+        <form> 태그
+            form 태그는 html에서 사용자가 입력할 수 있는 양식을 제공하는 태그이다.
+            form 태그 내의 <input> 태그들을 통해서 사용자가 입력한 정보를 서버로 넘기면서 요청하는 역할을 한다.
+
+        * 속성
+            action : 폼 내에 입력된 값들을 전달할 서버에 대한 URL을 기입한다.
+            method : get / post 방식으로 전송 방식을 지정한다.
+                get : 서버에 사용자가 입력한 값들을 URL에 노출시켜서 전달하는 방식
+                post : 서버에 사용자가 입력한 값들을 URL에 노출시키지 않고 전달하는 방식
+            autocomplete : 이전 입력 내용을 출력하는 기능(default : on, 각 태그별로 지정 가능)
+            
+    -->
+    <form action="입력양식.html" method="get">
+        <!--😊 서버에 값을 전달 하는 방법
+            1. form 태그 안에 위치
+            2. name 속성을 작성 
+
+            get방식에서 데이터를 가지고 가는 방법
+            쿼리스트링
+            url?id=aaa&pw=aaaa  
+            입력양식.html?name속성값=value속성값
+         -->
+        id : <input type="text" name="id" value="" required placeholder="id를 입력해주세요"><br>
+        <!-- 비밀번호 : 화면에 값대신 동그라미로 표시 -->
+        pw : <input type="password" name="pw" value="" required placeholder="pw를 입력해주세요"><br>
+        <!--이메일 : value속성의 값을 검증-->
+        email : <input type="email" name="email" placeholder="aaa@bbb.com"><br>
+        url : <input type="url" name="" id=""><br>
+        tel : <input type="tel" name="" id=""><br>
+        search : <input type="search" name="" id="">
+        <!--날자및 시간-->
+        <input type="datetime-local" name="" id="">
+        <input type="date" name="" id="">
+        <input type="time" name="" id="">
+        <input type="week" name="" id=""><br>
+        <!-- 수량 범위-->
+        <input type="range" name="" id=""><br>
+        <input type="number" name="" id="" max="10" min="1"><br>
+
+        <!-- name 속성으로 묶여서 하나의 값만 선택
+         선택된 요소가 서버로 전달된다
+         checked : 선택-->
+        성별 :  <input type="radio" name="gender" id="" value="m" checked> 성별없음
+                <input type="radio" name="gender" id="" value="m" checked> 남
+                <input type="radio" name="gender" id="" value="f"> 여 <br>
+        <!-- name 속성으로 묶여서 다중선택 가능
+         체크된 요소가 서버로 전달된다-->
+        취미 :  <input type="checkbox" name="hobby" id="" value="h1">스포츠<br>
+                <input type="checkbox" name="hobby" id="" value="h2">책읽기<br>
+                <input type="checkbox" name="hobby" id="" value="h3">음악감상<br>
+                <input type="checkbox" name="hobby" id="" value="h4">잠자기<br>
+        
+        <input type="hidden" name="hidden" value="test">
+        <input type="file" name="" id="" multiple><br>
+
+        <!--submit : 서버에 요청(전송)-->
+        <button type="submit">로그인</button>
+        <button type="reset">입력양식 초기화</button><br>
+
+        
+        <!-- input태그 이외의 입력 도구들 -->
+        <textarea name="" id="" cols="30" rows="10"></textarea><br>
+        <select name="" id="">
+            <option value="">경기도</option>
+            <option value="">제주도</option>
+            
+        </select>
+        <!-- 이미지 버튼 -->
+        <input type="image" src="images/pf.jpg" alt="" width="100" height="100">
+        <a href="수습국원모집.html"><img src="images/mic.jpg" alt=""></a>
+        <br>
+        <input type="text" name="" id="" size="10">
+        <input type="number" max="5" min="1" >
+    </form>
+</body>
+</html>

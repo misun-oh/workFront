@@ -1,0 +1,27 @@
+#container{
+    /* 
+    red : 문자를 이용해서 표현
+    #ccc : 16진수를 이용해서 색상을 표현하는 방법 
+    #000 : 검정색, #fff : 흰색
+    rgb()      
+    */
+    border: 1px solid #ccc;
+    padding-left: 70px;
+}
+
+h1{
+    display: inline-block;
+    background-color: rgb(3, 3, 163);
+    color: white;
+    margin-top: 10px;
+}
+/*p:last-child{
+    margin-bottom: 10px;
+}*/
+.mb10{
+    margin-bottom: 10px;
+}
+.accent{
+    color: red;
+    font-weight: 700;
+}

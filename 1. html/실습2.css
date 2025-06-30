@@ -1,0 +1,13 @@
+ul{
+    list-style: none;
+}
+/* id가 container인 요소의 스타일을 지정 */
+#container{
+    border: 1px solid black;
+    width: 550px;
+    /* 상하 좌우*/
+    /* 상 오 하 왼*/
+    padding: 20px 40px;
+    padding-bottom: 50px;
+    margin: 0 auto;
+}

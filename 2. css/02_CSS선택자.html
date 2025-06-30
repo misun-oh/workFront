@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 속성 으로 선택 해봅시다 */
+        /* div태그 중에서 id속성을 가지고 있는 요소 */
+        div[id]{
+            border: 1px solid black;
+        }
+        /* div태그 중에서 id속성의 값이 box1인 요소를 선택 */
+        /* =일치, ^=시작하는, $= 끝나는, *=포함하는 */
+        div[id=box1]{
+            background-color: aqua;
+        }
+        div[class^=div]{
+            color: tomato;
+        }
+        div[class$=class]{
+            font-weight: 900;
+        }
+        div[id*=o]{
+            font-style: italic;
+        }
+
+        /* 자식선택자 (한단계 아래)
+        div1태그의 자식 중에서 h4
+        */
+        #div1>h4{
+            background-color: #cccccc;
+        }
+        #div1>ul>h4{
+            background-color: blue;
+        }
+
+        /* 자손 */
+        #div1 li{
+            color: hotpink;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+    <h2>1. 기본 속성 선택자</h2>
+    <p>
+        기본 선택자 뒤에 []를 사용하여  속성과 속성값을 선택
+    </p>
+
+    <div class="div-class" id="box1">box1</div>
+    <div class="div-class" id="box2">box2</div>
+    <div class="class" id="box3">box3</div>
+    <div class="class" id="box4">box4</div>
+    <div class="class" >box5</div>
+
+    <h2>2. 자식 선택자와 후손 선택자</h2>
+    <p>
+        자식 : 바로 하위 요소(태그 안에)
+        후손 : 하위 요소들 전부
+    </p>
+    <div id="div1">
+        <h4>제목1</h4>
+        <h4>제목2</h4>
+        <ul>
+            <h4>제목3</h4>
+            <li>리스트아이템1</li>
+            <li>리스트아이템2</li>
+        </ul>
+        <li>리스트아이템1</li>
+    </div>
+</body>
+</html>
