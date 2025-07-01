@@ -39,6 +39,42 @@
         .i{
             font-style: italic;
         }
+
+        .td1{
+            text-decoration: underline;
+        }
+        .td2{
+            text-decoration: line-through;
+        }
+        .td3{
+            text-decoration: overline;
+        }
+        .td4{
+            /* a태그의 기본 속성은 inline이므로 
+            크기를 지정해도 반영이 되지 않음
+            inline : 컨텐츠의 영역만 차지
+            */
+            display: inline-block;
+            width: 200px;
+
+            /* 밑줄 제거, 배경색 지정, 글자색 지정, 가운데 정렬 */
+            text-decoration: none;
+            background-color: tomato;
+            color: white;
+            text-align: center;
+            
+            /* 텍스트가 한줄일때 세로 가운데 정렬 */
+            height: 50px;
+            line-height: 50px;
+            
+            border-radius: 50%;
+        }
+        .box{
+            /* border: 1px dotted #ccc; */
+            /* background-color: black; */
+            /* padding: 20px; */
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -78,5 +114,15 @@
     <ul>
         <li class="i">기울임</li>
     </ul>
+
+    <h2>text-decoration</h2>
+    <p>텍스트에 줄을 긋거나 줄을 없앨때 사용</p>
+    <ul>
+        <li class="td1">텍스트 아래 선 긋기</li>
+        <li class="td2">텍스트 중간 선 긋기</li>
+        <li class="td3">텍스트 위에 선 긋기</li>
+        <li class="box"><a class="td4" href="">링크 밑줄 없애기</a></li>
+    </ul>
+
 </body>
 </html>
