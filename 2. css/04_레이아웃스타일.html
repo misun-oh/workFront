@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .box{
+            border: 1px solid black;
+            background-color: antiquewhite;
+            width: 100px;
+            height: 100px;
+            /* line-height: 100px; */
+            /* 컨텐츠의 영역만 가질수 있다 */
+            /* display: inline; */
+            display: inline-block;
+        }
+        #fixed-size{
+            width: 200px;
+            height: 200px;
+        }
+        #variable-size{
+            width: 50%;
+            height: 200px;
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+        }
+        li{
+            display: inline-block;
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+        }
+        /* 부모박스의 스타일 */
+        .relativeBox{
+            background-color: aqua;
+            position: relative;
+            height: 200px;
+        }
+        .box1{
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+        }
+        .bc_r{
+            background-color: red;
+            /* 화면을 기준으로 위에서 100px, 100px에 위치 */
+            /* 부모중에 position: relative;가 있다면 부모를 기준으로
+            없다면 body를 기준으로 자리를 잡는다*/
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            /* right: 100px;
+            bottom: 100px; */
+        }
+        .bc_g{
+            background-color: green;
+        }
+        .bc_b{
+            background-color: blue;
+            position: fixed;
+            right: 100px;
+            top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>레이아웃 스타일</h1>
+    <h2>기본 스타일</h2>
+    <h3>width, height</h3>
+    <h4>고정크기(px)</h4>
+    <div id="fixed-size" class="box"></div>
+    <h4>가변크기(%)</h4>
+    <div id="variable-size" class="box"></div>
+
+    <h3>화면 배치 방법</h3>
+    <p>블럭 요소를 인라인 요소로 변경</p>
+
+    <ul>
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+    </ul>
+    <!-- 컨텐츠가 없고 박스의 영역을 지정해 주지 않으면 
+     컨텐츠 영역을 가질수 없다-->
+    <div class="box">box1</div>
+    <div class="box">box1</div>
+    <div class="box">box1</div>
+    <div class="box">box1</div>
+    <div class="box">box1</div>
+
+    <h2>포지셔닝</h2>
+    <p>css를 이용해서 여러 요소를 적절하게 배치 하는 것</p>
+    <div class="relativeBox">
+        <div class="box1 bc_r"></div>
+        <div class="box1 bc_g"></div>
+        <div class="box1 bc_b"></div>
+    </div>
+</body>
+</html>
