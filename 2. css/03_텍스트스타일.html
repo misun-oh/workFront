@@ -5,77 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        *{
-            /* font-family: 궁서체; */
-        }
-        h1{
-            /* 글자체가 없으면 다음 글자체를 사용*/
-            font-family: 맑은 고딕;
-        }
 
-        /* 절대크기 */
-        .px24{
-            font-size: 24px;
-        }
-        .rem2{
-            font-size: 2rem;
-        }
-        .em2{
-            font-size: 0.3em;
-        }
-        .p150{
-            font-size: 150%;
-        }
-
-        .fw100{
-            font-weight: 100;
-        }
-        .fw500{
-            font-weight: 500;
-        }
-        .fw900{
-            font-weight: 900;
-        }
-        .i{
-            font-style: italic;
-        }
-
-        .td1{
-            text-decoration: underline;
-        }
-        .td2{
-            text-decoration: line-through;
-        }
-        .td3{
-            text-decoration: overline;
-        }
-        .td4{
-            /* a태그의 기본 속성은 inline이므로 
-            크기를 지정해도 반영이 되지 않음
-            inline : 컨텐츠의 영역만 차지
-            */
-            display: inline-block;
-            width: 200px;
-
-            /* 밑줄 제거, 배경색 지정, 글자색 지정, 가운데 정렬 */
-            text-decoration: none;
-            background-color: tomato;
-            color: white;
-            text-align: center;
-            
-            /* 텍스트가 한줄일때 세로 가운데 정렬 */
-            height: 50px;
-            line-height: 50px;
-            
-            border-radius: 50%;
-        }
-        .box{
-            /* border: 1px dotted #ccc; */
-            /* background-color: black; */
-            /* padding: 20px; */
-            display: inline-block;
-        }
     </style>
+    <link rel="stylesheet" href="css/03_텍스트스타일.css">
 </head>
 <body>
     <h1>텍스트 스타일</h1>
@@ -122,6 +54,72 @@
         <li class="td2">텍스트 중간 선 긋기</li>
         <li class="td3">텍스트 위에 선 긋기</li>
         <li class="box"><a class="td4" href="">링크 밑줄 없애기</a></li>
+    </ul>
+
+    <h2>text-shadow</h2>
+    <p>텍스트에 그림자 효과 추가</p>
+    <ul>
+        <li class="shadow1">HTML</li>
+        <li class="shadow2">CSS</li>
+        <li class="shadow3">자바스크립트</li>
+    </ul>
+
+    <h2>테이블 스타일</h2>
+    <!--태그에 직접 적용하는 방식 - 최우선-->
+    <table width="600" class="tbl1">
+        <!-- caption : 테이블의 제목이나 내용을 추가하는 태그이다.(기본위치는 테이블 위 정중앙에 위치한다.) -->
+        <caption>웹 브라우져의 종류</caption>
+        <tr>
+            <td>브라우저명	</td>
+            <td>제조사	</td>
+            <td>홈페이지</td>
+        </tr>
+        <tr>
+            <td>익스플로러		</td>
+            <td>MS</td>
+            <td>https://www.microsoft.com</td>
+        </tr>
+        <tr>
+            <td>크롬	</td>
+            <td>Google	</td>
+            <td>https://www.google.com</td>
+        </tr>
+        <tr>
+            <td>사파리	</td>
+            <td>애플	</td>
+            <td>https://www.apple.com</td>
+        </tr>
+        <tr>
+            <td>파이어폭스	</td>
+            <td>Mozila	</td>
+            <td>https://www.mozila.com</td>
+        </tr>
+        <tr>
+            <!--lowsapn : 세로합치기-->
+            <td rowspan="2">rowspan</td>
+            <td>컬럼1</td>
+            <td>컬럼2</td>
+        </tr>
+        <tr>
+             <!--colspan : 가로합치기-->
+            <td colspan="2" id="ttt">colspan</td>
+            
+        </tr> 
+    </table>
+    ul>li{메뉴$}*4
+    <ul class="menu">
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+    </ul>
+
+
+    <ul class="menu2">
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
     </ul>
 
 </body>
