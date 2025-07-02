@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        /* vh */
+        #wrap{
+         display: flex;  
+         flex-direction: column; 
+         
+        }
+        .box1{
+            width: 100%;
+            background-color: antiquewhite;
+            
+        }
+        .box2{
+            background-color: beige;
+        }
+        .box3{
+            background-color: blanchedalmond;
+        }
+
+        .box1{
+            height: 15vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        .box2{
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .box3{
+            height: 12vh;
+            padding: 15px 30px;
+        }
+        .box4{
+            height: 13vh;
+            background-color: blanchedalmond;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        a{
+            text-decoration: none;
+            color: black;
+            font-weight: 700;
+
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="box1">
+            <div>구글정보    스토어</div>
+            <div>Gmail  이미지  아이콘1  아이콘2  사용자</div>
+        </div>
+        <div class="box2">
+            <div>로고</div>
+            <div>검색</div>
+            <div>버튼</div>
+        </div>
+        <div class="box3">
+            <div>대한민국</div>
+        </div>
+        <div class="box4">
+            <div>
+                <a href="#">광고</a>
+                <a href="#">비즈니스</a>
+                <a href="#">검색의 원래</a>
+            </div>
+            <div>
+                <a href="#">개인정보처리방침</a>
+                <a href="#">약관</a>
+                <a href="#">설정</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

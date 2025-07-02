@@ -23,49 +23,23 @@
       padding-bottom: 30px;
     }
 
-    
-    .title-text{
-      /* #000 (검정) ~ #fff(흰색) */
-      color: #aaa;
-      text-align: center;
-      font-size: 2rem;
-    }
-    .title-text h2{
-      margin: 5px;
-    }
-    .title-text p{
-      font-size: 1rem;
-      color: #ccc;
-    }
-    .travel-card{
-      border: 1px solid #ccc;
-      border-radius: 15px;
-      padding: 20px;
-
-      width: 250px;
-      display: inline-block;
-
-      text-align: center;
-      margin-right: 20px;
-    }
-    .travel-card:last-child{
-      margin-right: 0px;
-    }
-    .travel-card img{
-      width: 200px;
-      border-radius: 20%;
-    }
-
-    .travel-card p{
-      /* border: 1px solid red; */
-      height: 50px;
-      /* 영역을 벗어나면 숨김처리 */
-      overflow: hidden;
-      
-    }
     .travel-list{
       /* border: 1px solid green; */
+      display: flex;
+      justify-content: space-between;
+      padding-top: 20px;
+    }
+
+    .travel-card{
+      width: 250px;
+      /* border: 1px solid black; */
       text-align: center;
+    }
+
+    .travel-card img{
+      width: 200px;
+      border-top-left-radius: 50%;
+      border-top-right-radius: 50%;
     }
   </style>
 </head>

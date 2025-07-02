@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: url(images/bg5.jpg) no-repeat;
+            /* 여백없이 가득 채우기 */
+            background-size: cover;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            margin: 0px;
+
+            /* border: 1px solid white; */
+            height: 100vh;
+        }
+        div[class]{
+            width: 400px;
+            height: 400px;
+            border: 1px solid white;
+
+            background-image: url(images/bg4.jpg);
+        }
+
+        .box1{
+            /* 원래크기 */
+            background-size: auto;
+        }
+        .box2{
+            /* width값을 지정 하면 세로는 자동 으로 계산 */
+            background-size: 200px;
+            /* 배경이미지는 기본이 반복 */
+            background-repeat: no-repeat;
+            background-position: center center;
+            
+        }
+        .box3{
+            /* width값을 지정 하면 세로는 자동 으로 계산 */
+            background-size: 50%;
+            /* 배경이미지는 기본이 반복 */
+            background-repeat: no-repeat;
+            background-position: 100px 100px;
+            background-color: aqua;
+        }
+        .box4{
+            /* width값을 지정 하면 세로는 자동 으로 계산 */
+            background-size: 100% 200%;
+            /* 배경이미지는 기본이 반복 */
+            background-repeat: no-repeat;
+
+            background-color: aqua;
+        }
+
+        .box5{
+            /* width값을 지정 하면 세로는 자동 으로 계산 */
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: bottom;
+
+            
+        }
+
+        .box6{
+            /* width값을 지정 하면 세로는 자동 으로 계산 */
+            background-size: cover;
+            /* 배경이미지는 기본이 반복 */
+            background-repeat: no-repeat;
+
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <button>클릭!</button>
+
+    
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+    <div class="box6"></div>
+    
+
+</body>
+</html>

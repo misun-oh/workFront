@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        
+        div{
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        .flexBox{
+            box-sizing: content-box;
+            width: 800px;
+            /* height: 600px; */
+            /* 플렉스 컨테이너
+            -플렉스레이아웃을 적용할 대상을 묶는 요소 */
+            display: flex;
+            /* 주축(기본:행)의 정렬 */
+            justify-content: space-between;
+            justify-content: space-around;
+            justify-content: center;
+            justify-content: flex-end;
+            justify-content: flex-start;
+
+            /* 교차축의 정렬 */
+            align-items: center;
+            align-items: flex-end;
+            align-items: flex-start;
+
+            /* 플렉스 속성을 한줄 또는 여러줄로 배치 */
+            flex-wrap: wrap;
+            /* flex-wrap: wrap-reverse; */
+        }
+        .w800{
+            width: 800px;
+        }
+        .w600{
+            width: 600px;
+        }
+        .w200{
+            width: 200px;
+        }
+        .main{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="flexBox">
+        <header class="w800">박스1</header>
+        <main class="w800">
+            <div class="w600">박스3</div>
+            <div class="w200">박스4</div>
+        </main>
+        <footer class="w800">박스5</footer>
+
+    </div>
+</body>
+</html>
