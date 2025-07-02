@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      *{
+        box-sizing: border-box;
+      }
+        /* 핸드폰 */
+        body{
+            background-color: yellow;   
+        }
+
+        #container{
+            width: 100wh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+        }
+
+        .card{
+            
+            width: 70%;
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 20px;
+            
+        }
+        .card img{
+          width: 80%;
+            border-top-left-radius: 50%;
+            border-bottom-right-radius: 50%;
+        }
+        .words{
+            background-color: white;
+        }
+        /* 태블릿 */
+        @media (min-width:768px) and (max-width:1439px){
+            body{
+                background-color: blue;
+            }
+            .card{
+              width: 40%;
+            }
+        }
+        /* PC */
+        @media (min-width:1440px){
+            body{
+                background-color: red;
+            }
+            
+            .card{
+                width: 20%;
+            }
+        }
+    </style>
+</head>
+<body>
+  <div id="container">
+    <div class="card">
+        
+      <img src="images/1.jpg">    
+      <div class="words">
+        <h2>일 분 전만큼 먼 시간은 없다.</h2>
+        <h3>- Jim Bishop</h3>
+      </div>            
+    </div>
+    <div class="card">
+        
+      <img src="images/2.jpg">    
+      <div class="words">
+        <h2>낡은 옷은 그냥 입고 새 책을 사라.</h2>
+        <h3>- Austin Phelps</h3>
+      </div>            
+    </div>  
+    <div class="card">
+        
+      <img src="images/2.jpg">    
+      <div class="words">
+        <h2>낡은 옷은 그냥 입고 새 책을 사라.</h2>
+        <h3>- Austin Phelps</h3>
+      </div>            
+    </div>            
+    <div class="card">
+        
+      <img src="images/2.jpg">    
+      <div class="words">
+        <h2>낡은 옷은 그냥 입고 새 책을 사라.</h2>
+        <h3>- Austin Phelps</h3>
+      </div>            
+    </div>            
+  </div>
+  </div>
+</body>
+</html>
