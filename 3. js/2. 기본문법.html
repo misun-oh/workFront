@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .area{
+            width: 500px;
+            height: 200px;
+            border: 1px solid;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+    </style>
+    <script src="2. 기본문법.js"></script>
+</head>
+
+
+<body>
+    <h1>기본문법</h1>
+    <button id="btn1">div박스에 안녕!이라고 입력</button>
+    <div class="area" id="area1"></div>
+    <script>
+        // <script>태그 안에 코드를 작성 하면 자바스크립트 해석기에 의해서 한줄씩 실행되어 진다
+        var btn1 = document.querySelector('#btn1');
+        btn1.onclick = function(){
+            var area1 = document.querySelector('#area1');
+            area1.innerHTML = '<h1>안녕!</h1>';
+            area1.innerHTML += '<img src="../2. css/images/cat.jpg" alt="">';
+        }
+    </script>
+    
+    <hr>
+
+    <h2>1. 변수와 자료형</h2>
+    <h3>1) 변수 선언</h3>
+
+</body>
+</html>

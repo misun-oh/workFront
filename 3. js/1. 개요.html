@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 100px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <!-- onclick : 클릭이벤트  
+     alert('값') : 값을 메세지창으로 출력하는 함수
+    -->
+    <button onclick="alert('hi!')">클릭!</button>
+
+    <h1>자바스크립트</h1>
+    <pre>
+        웹 브라우저에서 많이 사용되는 인터프리터 방식의 스크립트 언어(함수, 객체지향)
+            - 인터프리터 방식 : 컴파일 과정 없이 실행하면서 코드를 하나씩 읽어내는 방식이다. 
+            (코드에 문법에 오류가 있으면 실행 시점에 알 수 있다.)
+        
+        화면의 동적인 처리에 사용
+    </pre>
+    <h3>1. 자바스크립트 사용법</h3>
+    <h4>inline(인라인 방식)</h4>
+    <pre>
+        태그 내에 직접 간단한 코드를 작성해서 실행하는 방법
+        자바스크립트 소스가 몇 줄 안되는 경우 inline 방식을 사용한다.
+    </pre>
+    <button onclick="alert('인라인 방식 입니다.')">인라인 방식</button>
+    <button onclick="console.log('콘솔창에 로그를 출력 합니다.')">콘솔출력</button>
+    <h4>internal(내부 방식)</h4>
+    <pre>
+        script 태그 영역에 함수 단위로 소스코드를 작성해놓고
+        이벤트 발생 시 해당 함수를 호출함으로써 실행하는 방식이다.
+        
+        ✨ 위치에 따라 오류가 발생 될 수 있다
+    </pre>
+    
+    <button onclick="btnClick()"> 인라인방식 알림창 출력</button>
+    <button id="btn"> 내부방식 알림창 출력</button>
+    <button id="btnSelf"> 혼자해보기 </button>
+    
+    <script>
+        // 함수 작성
+        // function 함수이름(){}
+        function btnClick() {
+            alert('버튼이 클릭되었습니다.');
+        }
+
+        // 변수 선언 
+        // 요소를 선택해서 변수에 담기
+        var btn = document.getElementById('btn');
+
+        // 함수를 적용할때는 이름만 !!
+        //btn.onclick = btnClick;
+        btn.onclick = function(){
+            alert('btn이 클릭 되었어요!!!!');
+        };
+
+        // 1. 요소 선택 (#아이디, .클래스, 태그이름)
+        var btnSelf = document.querySelector('#btnSelf');
+        // 2. 이벤트가 발생했을때 처리할 함수를 구현
+        //    함수를 변수에 저장할수도 있고 매개변수로 전달할 수도 있다
+        btnSelf.onclick = function(){
+            console.log('내부방식으로 만들어 봤어요!');
+        }
+        
+    </script>
+    <h4>external(외부 방식)</h4>
+    <!-- 외부 스크립트 연결-->
+    <script src="1. 개요.js"></script>
+    
+    <pre>
+        별도의 .js 파일로 작성해서 html 파일에서 가져다 사용하는 방법
+        자바스크립트의 양이 많거나 중복되는 코드가 있을 경우 자바스크립트 코드 부분을 별도의 외부 파일로 작성한다.
+    </pre>
+
+    <hr>
+    <h4>간단한 입출력</h4>
+    <button id="btn1">알림창</button>
+    <button id="btn2">확인창</button>
+    <button id="btn3">프롬프트 입력창</button>
+    <button id="btn4">웹브라우져 화면에 출력하기</button>
+    <button id="btn5">div박스에 출력하기</button>
+    <br>
+    <!-- 요소를 선택 하기 위해서 class속성을 이용 -->
+    <div class="box"></div>
+    <script>
+        // 하나의 요소만 선택
+        var btn1 = document.querySelector('#btn1');
+        btn1.onclick = 
+                        function(){
+                            // alert('메세지');
+                            alert('알림창');
+                        };
+        //btn1.onclick = alert('이렇게 하면 안돼!');
+        var btn2 = document.querySelector('#btn2');
+        btn2.onclick = function(){
+            var res = confirm('정말 삭제 하시겠습니까?');
+            // if (boolean) {}
+            if(res){
+                console.log('삭제 합니다');
+            } else {
+                console.log('삭제 취소');
+            }
+        }
+
+        btn3.onclick = function(){
+            var res = prompt('이름을 입력 해주세요.', '오미자');
+            console.log(res + '님 환영 합니다.🎉')
+        }
+
+        btn4.onclick = function(){        
+            document.write("<h1>어서 오세요.🎉</h1>");
+        }
+        var box = document.querySelector('.box');
+        btn5.onclick = function(){
+            var date = new Date();
+            // 박스의 컨텐츠를 작성 할때 많이 사용 합니다
+            box.innerHTML = '<h1>' + date.toLocaleString() + '</h1>';
+        }
+
+        // 박스에 날자와 시간을 입력 하는 함수
+        // 함수이름을 불러서 호출
+        function setDateTime(){
+            var box = document.querySelector('.box');
+            var date = new Date();
+            // 박스의 컨텐츠를 작성 할때 많이 사용 합니다
+            box.innerHTML = '<h1>' + date.toLocaleString() + '</h1>';
+        }
+
+        // 반복적으로 실행
+        // setInterval(반복적으로 실행할 함수, 시간(1/1000))
+        var intervalId = setInterval(setDateTime, 1000);
+
+        // 반복 종료
+        // clearInterval(인터벌ID);
+        function endInterval(){
+            clearInterval(intervalId);
+        }
+    </script>
+    
+     
+</body>
+
+</html>
