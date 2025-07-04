@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <style>
+        .box{
+            width: 500px;
+            height: 200px;
+            border: 1px solid;
+            /* overflow 
+            hidden : 부모영역을 벗어나면 숨김처리
+            scroll : 스크롤을 보여줌
+            */
+            overflow: scroll;
+            
+        }
+    </style>
+    <script src="3. 제어문반복문.js"></script>
+</head>
+<body>
+
+
+    <form class="row g-3">
+        <div class="col-auto">
+            <label for="staticEmail2" class="col-form-label">이름</label>
+            
+        </div>
+        <div class="col-auto">
+        <label for="inputPassword2" class="visually-hidden">Password</label>
+        <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+        </div>
+        <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
+        </div>
+    </form>
+
+    <div class="row g-3 align-items-center">
+        <div class="col-auto">
+        <label for="name" class="col-form-label">이름</label>
+        </div>
+        <div class="col-auto">
+        <input type="text" id="name" class="form-control" aria-describedby="passwordHelpInline">
+        </div>
+        <div class="col-auto">
+        <span id="passwordHelpInline" class="form-text">
+            본명을 입력 해주세요
+        </span>
+        
+        </div>
+        </div>
+    이름 : <input type="text" id="name" class="form-control"><br>
+    <button id="btn1" class="btn btn-info ">버튼</button>
+    <div class="box" id="box1">
+    </div>
+    <hr>
+    <div id="box2"></div>
+</body>
+</html>

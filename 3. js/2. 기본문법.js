@@ -137,5 +137,8 @@ function typeTest(){
 
 }
 
-let btn2 = document.querySelector('btn2');
-console.log(btn2, '======================');
+window.onload = function(){
+
+    let btn2 = document.querySelector('#btn2');
+    console.log(btn2, '======================');
+}
