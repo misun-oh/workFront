@@ -42,4 +42,22 @@ window.onload = function(){
 
     });
     
+
+    tableBtn.addEventListener('click', function(){
+        
+        tableBox.innerHTML = `${row.value}행 ${col.value}열 테이블을 생성합니다.`;
+        let content = '<table border=1>';
+
+        for(let i=0;i<row.value;i++){
+            content += '<tr>';
+                for(let j=0;j<col.value;j++)
+                    content += `<td>${i+1} ${j+1}</td>`;
+            content += '</tr>';
+        }
+
+        content += '</table>';
+
+        tableBox.innerHTML += content;
+
+    });
 }
