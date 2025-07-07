@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener('load', function(){
+            console.log('로딩완료');
+            // addEventListener(이벤트이름, 함수)
+            /*
+            버튼을 클릭하면 서버에 파일을 요청
+            -> 요청결과 응답을 처리할 콜백함수를 작성
+                콜백함수의 첫번째 파라메터는 response객체가 응답
+            -> response.json() 함수를 호출 하여 파일의 내용을 Object로 변환
+            */
+            userBtn.addEventListener('click', function(){
+                // json파일을 요청(서버 URL정보를 입력)
+                // 파일이름이 다른경우 - 404오류
+                fetch('5. json파일요청.json') // 1. 서버에 요청
+                .then(function(res){         // 2. 요청결과 응답을 처리할 콜백함수 작성
+                    console.log(res);
+                    return res.json();       // 3. JSON형식의 파일 내용을 Object로 변환
+                })
+                .then(function(data){
+                    console.log(data);
+                    // 사용자 정보를 화면에 출력
+                    box.innerHTML = `
+                        <h1>사용자 정보</h1>
+                        이름 : ${data.name}<br>
+                        나이 : ${data.age}<br>
+                        취미 : ${data.hobby}<br>
+                    `;
+
+
+                });
+            });
+
+            userListBtn.addEventListener('click', function(){
+                fetch('5. users.json')
+                .then(function(res){
+                    // 빈 파일 이거나, 형식에 맞지 않는 경우 오류가 발생 할수 있다
+                    console.log("res", res)
+                    return res.json();
+                })
+                .then(function(data){
+                    console.log("data", data);
+                    for(let i=0; i<data.length;i++){
+                        data[i].name;
+                        box.innerHTML += `
+                        <h1>사용자 정보</h1>
+                        이름 : ${data[i].name}<br>
+                        나이 : ${data[i].age}<br>
+                        취미 : ${data[i].hobby}<br>
+                    `;
+                    }
+                })
+            })
+
+            btn.addEventListener('click', function(){
+                fetch('https://apis.data.go.kr/1360000/BeachInfoservice/getUltraSrtFcstBeach?serviceKey=DU3KPJJtl2AKmdX%2FWH2DnaDhijW8wJFXUTXPdEjTBlHxKSdZVfJP5mIBAcUevwxp3ZQrC8gMUPuq%2BMqo8MDEPA%3D%3D&numOfRows=100&pageNo=1&dataType=JSON&base_date=20250707&base_time=1230&beach_num=1')
+                .then(function(res){
+                    return res.json();
+                })
+                .then(function(data){
+                    console.log(data);
+                    let content = '';
+                    itemList = data.response.body.items.item;
+                    console.log(itemList);
+                    box.innerHTML = '';
+                    itemList.forEach(function(element){
+                        content += `
+                            ${element.beachNum} 
+                            ${element.baseDate} 
+                            ${element.baseTime} 
+                            ${element.category} 
+                            ${element.fcstDate} 
+                            ${element.nx} 
+                            ${element.ny} 
+                            <br>`;
+                    })
+                    box.innerHTML = content;
+                        
+                });
+                
+
+            })
+        })
+    </script>
+</head>
+<body>
+    <button id="userBtn">사용자 조회</button>
+    <button id="userListBtn">사용자 목록 조회</button>
+    <button id="btn">기상청 예보 목록</button>
+    <div id="box"></div>
+</body>
+</html>
