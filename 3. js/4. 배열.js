@@ -33,10 +33,12 @@ window.onload = function(){
         
         // 배열의 길이
         array4.length;
-
+        let content = '';
         for(let i=0;i<array4.length;i++){
             console.log(`배열[${i}] : `, array4[i]);
+            content += `배열[${i}] : ${array4[i]} <br>`;
         }
+        area1.innerHTML = content;
 
     });
     
