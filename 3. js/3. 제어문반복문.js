@@ -1,4 +1,5 @@
-// 화면의 요소를 선택하고 이벤트를 등록하여 화면을 초기화하는 역할을 합니다.
+// 화면의 요소를 선택하고 이벤트를 등록하여 
+// 화면을 초기화하는 역할을 합니다.
 window.onload = function(){
     // 화면 초기화
     let btn1 = document.querySelector('#btn1');
