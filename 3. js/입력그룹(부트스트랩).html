@@ -9,7 +9,7 @@
             margin: 0px;
         }
         #wrap{
-            border: 1px solid;
+            border: 1px solid #ccc;
             border-radius: 20px;
             padding: 20px;
             width: 500px;
@@ -30,9 +30,52 @@
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 
+    <script>
+        window.addEventListener('load', ()=>{
+            // ✨ 전역변수로 만들어서 외부함수에서도 사용할수 있도록 해준다!!
+            myModal = new bootstrap.Modal(document.getElementById('myModal'));
+            // myModal.show();
+
+            idCheckBtn.addEventListener('click', ()=>{
+                // 아이디 필드가 비어 있지 않다면 통과
+                if(userId.value != ''){
+                    modalShow('아이디 중복찾기', '사용가능한 아이디 입니다.');
+                    //alert('사용가능한 아이디 입니다.');
+                } else {
+                    alert('아이디를 입력 해주세요');
+                }
+            });
+
+            let submitBtn = document.querySelector('[type="submit"]');
+            // 함수의 첫번째 파라메터로 이벤트에 대한 정보를 받아온다
+            submitBtn.addEventListener('click', (e)=>{
+                // 기본 이벤트를 제거
+                e.preventDefault();
+                if(userPW.value == ''){
+                    modalShow('회원가입', '비밀번호를 입력해주세요');
+                }
+                // 비밀번호 확인
+                if(userPW.value != userPWCheck.value){
+                    modalShow('회원가입', '비밀번호가 일치하지 않습니다.');
+                    return;
+                }
+            })
+
+        });
+
+        function modalShow(title, msg){
+            modalLabel.innerText = title;
+            modalBody.innerText = msg;
+            modalSaveBtn.style.display = 'none';
+            myModal.show();
+        }
+    </script>
 </head>
 <body>
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"> <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"> <svg class="bi me-2" width="40" height="32" aria-hidden="true"><use xlink:href="#bootstrap"></use></svg> <span class="fs-4">Simple header</span> </a> <ul class="nav nav-pills"> <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li> <li class="nav-item"><a href="#" class="nav-link">Features</a></li> <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li> <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li> <li class="nav-item"><a href="#" class="nav-link">About</a></li> </ul> </header>
+
     <div id="wrap">
+        <form action="">
         <h3>회원가입</h3>
         
 
@@ -40,14 +83,14 @@
             메세지 출력
         </div>
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="아이디" aria-label="Recipient’s username" aria-describedby="basic-addon2">
-            <button id="basic-addon2" class="btn btn-primary">아이디 중복 찾기</ㅠ>
+            <input id="userId" type="text" class="form-control" placeholder="아이디" aria-label="Recipient’s username" aria-describedby="basic-addon2">
+            <button id="idCheckBtn" type="button" class="btn btn-primary">아이디 중복 찾기</ㅠ>
         </div>
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="비밀번호" aria-label="Recipient’s username" aria-describedby="basic-addon2">
+            <input type="text" class="form-control" id="userPW" placeholder="비밀번호" aria-label="Recipient’s username" aria-describedby="basic-addon2">
         </div>
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="비밀번호 확인" aria-label="Recipient’s username" aria-describedby="basic-addon2">
+            <input type="text" class="form-control" id="userPWCheck" placeholder="비밀번호 확인" aria-label="Recipient’s username" aria-describedby="basic-addon2">
         </div>
         <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="이메일" aria-label="Recipient’s username" aria-describedby="basic-addon2">
@@ -118,7 +161,27 @@
             <button type="submit" class="btn btn-primary">회원가입</button>
         </div>
     </div>
+    </form>
 
+
+    <!-- Modal 모달창-->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="modalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modalBody">
+            ...
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="modalSaveBtn">Save changes</button>
+        </div>
+        </div>
+    </div>
+    </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
 </html>
