@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener('load', ()=>{
+
+            campSearchBtn.addEventListener('click', ()=>{
+                fetch('https://apis.data.go.kr/B551011/GoCamping/basedList?numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=GoCamping&serviceKey=cO0wf5%2FHyQ0xJ9QvFzW6ZUKnkog5cI%2FdCWN3xfwj%2F98%2Fi59gDTW%2B%2FwEczYF3FWh9k3MP%2BRIUSNrRjFpUHRChoQ%3D%3D&_type=json')
+                .then(res => res.json())
+                .then(data =>{
+                    console.log(data);
+                    let item = data.response.body.items.item;
+                    console.log(item);
+                    
+                    // 캠핑장 정보를 담을 컨텐츠
+                    let content = '';
+
+                    // 향샹된 for문
+                    for(camp of item){
+                        content += `
+                            <div class="card" style="width: 18rem;">
+                            <img src="${camp.firstImageUrl}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <h5 class="card-title">${camp.facltNm}</h5>
+                            <p class="card-text">${camp.lineIntro}</p>
+                            <a href="#" class="btn btn-primary">예약하기</a>
+                            </div>
+                            </div>
+
+                        `;
+
+                        console.log(camp.facltNm);
+                        console.log(camp.lineIntro);
+                        console.log(camp.firstImageUrl);
+                    }
+
+                    // 컨텐츠를 화면에 붙이기
+                    campList.innerHTML = content;
+
+                });
+            });
+        })
+    </script>
+</head>
+<body>
+    <button id="campSearchBtn">캠핑장 정보 조회</button>
+    <img src="" alt="">
+    <div id="campList">
+
+    </div>
+    
+
+    
+</body>
+</html>
