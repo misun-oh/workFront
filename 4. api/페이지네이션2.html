@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener('load', ()=>{
+            // printPageNave(6,10,131,5)
+            printPageNave(11,10,131,5)
+            //printPageNave();
+        })
+
+        /*
+        pageNo : 요청 페이지 번호
+        itemsperPage : 페이지당 게시물의 수
+        totalCnt : 총 게시물의 수
+        pagesPerBlock : 블럭당 페이지 수
+        */
+        function printPageNave(pageNo=1, itemsperPage=10
+                                , totalCnt=131, pagesPerBlock=5){
+            console.log('pageNo', pageNo);
+            console.log('itemsperPage', itemsperPage);
+            console.log('totalCnt', totalCnt);
+            console.log('pagesPerBlock', pagesPerBlock);
+            // 총 페이지의 수
+            // 131/10 = 13.1페이지 -> 올림처리
+            const totalPages = Math.ceil(totalCnt/itemsperPage);
+            console.log('totalPages', totalPages)
+
+            endNo = Math.ceil(pageNo/pagesPerBlock) * pagesPerBlock;
+            console.log('endNo', endNo);
+            startNo = endNo - (pagesPerBlock-1);
+            console.log('startNo', startNo);
+
+            // 만약 총페이지수 보다 endNo가 크면 endNo를 총 페이지수로 변경
+            
+            
+            let content = '';
+            for(let i=startNo;i<=endNo;i++){
+                content += `${i} `;
+            }
+            nav.innerHTML = content;
+        }
+        
+    </script>
+</head>
+<body>
+    
+    <div id="nav">
+
+    </div>
+
+</body>
+</html>
