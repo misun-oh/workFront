@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function test(){
+            console.log('test()', this);
+        }
+
+        function btn1Click(e){
+            console.log('btn1Click', e);
+            console.log('btn1Click', this);
+        }
+
+        window.addEventListener('load', ()=>{
+            let obj = {
+                name : '오미자'
+                , age : 20    
+                , sayHello : ()=>{
+                    // 객체 내부에서 this는 객체를 의미
+                    console.log('name', this);
+                }
+            }
+
+            obj.sayHello();
+
+            // 일반함수
+            btn2.addEventListener('click', function(){
+                console.log('일반함수', this);
+            })
+
+            // 화살표 함수
+            btn3.addEventListener('click', (e)=>{
+                console.log(e.target);
+                console.log('화살표함수', this);
+            })
+
+        })
+
+
+
+    </script>
+</head>
+<body>
+    <button onclick="btn1Click(this)">버튼1</button>
+    <button id="btn2">버튼2</button>
+    <button id="btn3">버튼3</button>
+</body>
+</html>

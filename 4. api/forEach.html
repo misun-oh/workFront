@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const array = ['a', 'b', 'c'];
+        array.forEach((e)=>{
+            console.log(e);
+        });
+
+        window.addEventListener('load', function(){
+            let btnList = document.querySelectorAll('button');
+            /*
+            forEach()는 배열의 각 요소에 대해 콜백 함수를 한 번씩 실행하는 메서드
+                - 반환값 없음
+                - 중단 없음
+            매개변수
+                요소, index, 배열
+            */
+            btnList.forEach(function(e, i){
+                e.addEventListener('click', function(){
+                    alert(e.innerHTML+`번 버튼이 선택 되었습니다.(${i})`);
+                })
+            })
+            
+        })
+        
+    </script>
+</head>
+<body>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+</body>
+</html>

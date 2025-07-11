@@ -33,12 +33,41 @@
     <script src="common.js"></script>
 </head>
 <body>
+    <form action="https://apis.data.go.kr/B551011/GoCamping/basedList" name="campForm">
+<!-- numOfRows=50
+    &pageNo=3
+    &MobileOS=ETC
+    &MobileApp=GoCamping
+    &serviceKey=cO0wf5%2FHyQ0xJ9QvFzW6ZUKnkog5cI%2FdCWN3xfwj%2F98%2Fi59gDTW%2B%2FwEczYF3FWh9k3MP%2BRIUSNrRjFpUHRChoQ%3D%3D
+    &_type=json 
+    
+    numOfRows=50
+    &pageNo=3
+    &MobileOS=ETC
+    &MobileApp=GoCamping
+    &serviceKey=cO0wf5%252FHyQ0xJ9QvFzW6ZUKnkog5cI%252FdCWN3xfwj%252F98%252Fi59gDTW%252B%252FwEczYF3FWh9k3MP%252BRIUSNrRjFpUHRChoQ%253D%253D
+    &_type=json
+    -->
+        <!-- placeholder : value값이 없을때만 표시 -->
+        페이지당게시물수<input type="text" name="numOfRows" value="10" id="">
+        <br>페이지번호<input type="text" name="pageNo" value="1" id="">
+        <br>총 게시물의수<input type="text" name="" value="0" id="totalCnt">
+        <br>블럭당페이지의수<input type="text" name="" value="5" id="pagesPerBlock">
+
+        <br><input type="hidden" name="MobileOS" value="ETC" id="">
+        <input type="hidden" name="MobileApp" value="GoCamping" id="">
+        <!-- URL Encodeing -->
+        <input type="hidden" name="serviceKey" value="DU3KPJJtl2AKmdX/WH2DnaDhijW8wJFXUTXPdEjTBlHxKSdZVfJP5mIBAcUevwxp3ZQrC8gMUPuq+Mqo8MDEPA==" id="">
+        <input type="hidden" name="_type" value="json" id="">
+        <button type="submit">서브밋 버튼</button>
+    </form>
+
     <button id="campSearchBtn">캠핑장 정보 조회</button>
     <img src="" alt="">
     <div id="campList">
 
     </div>
-    
+    <div id="nav"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>    
 
