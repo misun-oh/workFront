@@ -7,7 +7,7 @@ window.addEventListener('load', ()=>{
 
 
 function getList(){
-    fetch('https://apis.data.go.kr/B551011/GoCamping/basedList?numOfRows=50&pageNo=2&MobileOS=ETC&MobileApp=GoCamping&serviceKey=cO0wf5%2FHyQ0xJ9QvFzW6ZUKnkog5cI%2FdCWN3xfwj%2F98%2Fi59gDTW%2B%2FwEczYF3FWh9k3MP%2BRIUSNrRjFpUHRChoQ%3D%3D&_type=json')
+    fetch('https://apis.data.go.kr/B551011/GoCamping/basedList?numOfRows=50&pageNo=3&MobileOS=ETC&MobileApp=GoCamping&serviceKey=cO0wf5%2FHyQ0xJ9QvFzW6ZUKnkog5cI%2FdCWN3xfwj%2F98%2Fi59gDTW%2B%2FwEczYF3FWh9k3MP%2BRIUSNrRjFpUHRChoQ%3D%3D&_type=json')
     .then(res => res.json())
     .then(data =>{
         console.log(data);

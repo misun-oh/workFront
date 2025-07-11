@@ -7,7 +7,7 @@
     <script>
         window.addEventListener('load', ()=>{
             // printPageNave(6,10,131,5)
-            printPageNave(11,10,131,5)
+            printPageNave(11,10,131,5);
             //printPageNave();
         })
 
@@ -32,17 +32,36 @@
             console.log('endNo', endNo);
             startNo = endNo - (pagesPerBlock-1);
             console.log('startNo', startNo);
-
-            // 만약 총페이지수 보다 endNo가 크면 endNo를 총 페이지수로 변경
-            
             
             let content = '';
+            
+            // 만약 총페이지수 보다 endNo가 크면 endNo를 총 페이지수로 변경
+            // 이번블럭 버튼
+            if(startNo != 1){
+                content += `<button onclick='nextPage(${startNo-1})'><<</button>`;
+            }
+            // 끝번호 조정
+            if(endNo > totalPages){
+                endNo = totalPages;
+            }
             for(let i=startNo;i<=endNo;i++){
-                content += `${i} `;
+                content += `<button onclick='nextPage(${i})'>${i}</button>`;
+            }
+            // 다음블럭 버튼
+            // 진짜끝페이지 번호
+            // totalPages : 진짜 페이지의 수
+            if(totalPages > endNo){
+                content += `<button onclick='nextPage(${endNo+1})'>>></button>`;
             }
             nav.innerHTML = content;
         }
         
+        // 요청페이지 블럭 화면에 출력
+        // 페이지 블럭의 번호를 클릭하면 요청하려는 페이지번호를 매개변수로 받아서 
+        // 페이지블럭을 다시 그리기 위해 함수를 호출
+        function nextPage(pageNo){
+            printPageNave(pageNo,10,131,5);
+        }
     </script>
 </head>
 <body>
